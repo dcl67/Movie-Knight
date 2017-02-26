@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+{% block content %}
+{% load static %}
 <html>
 <head>
 
@@ -18,7 +19,8 @@
 </nav>
 <p style="font-family:Verdana;color:black;font-size:50px">About Movie Knight</p>
 <div class="imgcontainer">
-    <center> <img src="logo.png" alt="Avatar" class="avatar"> </center>
+    {% comment %}<center> <img src="logo.png" alt="Avatar" class="avatar"> </center> {% endcomment %}
+    <center><img src="{% static "/images/logo.png" %}"/></center>
   </div>
 
 <p style="font-family:Verdana;color:black;font-size:20px">
@@ -34,4 +36,4 @@ Your knight in shining armor is here to be the voice of reason and decide which 
        .__(.)< (MEOW)
         \___)   
  ~~~~~~~~~~~~~~~~~~-->
-</html>
+{% endblock %}
