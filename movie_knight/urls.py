@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from mvindex.views import index, Create_New_User, Login, Create_View, Quiz
+from mvindex.views import index, Create_New_User, Login, Create_View, Quiz, Predictor
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -24,5 +24,6 @@ urlpatterns = [
     url(r'^new-user/$', Create_View, name='new-user'),
     url(r'^create/$', Create_New_User, name='create-user'),
     url(r'^login/$', Login, name='login'),
-    url(r'^quiz/$', Quiz, name='quiz')
+    url(r'^quiz/$', Quiz, name='quiz'),
+    url(r'^results/$', Predictor, name='predictor'),
 ]
