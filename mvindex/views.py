@@ -49,6 +49,8 @@ def Quiz(request):
 
 def Predictor(request):
     #answers = get_object_or_404(Questionaire)
+    print('here is your request')
+    print(request)
     #form = QuestionaireForm1
     question1 = request.POST['#1']
     question2 = request.POST['#2']
@@ -60,7 +62,6 @@ def Predictor(request):
     question8 = request.POST['#8']
     question9 = request.POST['#9']
     question10 = request.POST['#10']
-
     #The function that makes the reccomendation
     def make_reccomendation(self, user_pref):
 
@@ -122,12 +123,12 @@ def Predictor(request):
 
         return i
 
-    predictor = Predictor()
+    predictor = Predictor(user_pref)
     test_pref = {1:question1, 2:question2, 3:question3, 4:question4, 5:question5, 6:question6, 7:question7, 8:question8,
     9:question9, 10:question10}
     reccomendation = predictor.make_reccomendation(test_pref)
     print("your reccomendation ID is " + str(reccomendation))
     context = {
-
+        'reccommendation':reccommendation
     }
     return render( request, 'mvindex/results.html', context )
