@@ -1,5 +1,21 @@
-<!DOCTYPE html>
-<html>
+{% load staticfiles %}
+{% block content %}
+<style>
+#footer {
+   position:absolute;
+   bottom:0;
+   width:100%;
+   height:60px;   /* Height of the footer */
+   background:#6cf;
+}
+#p{
+text-align: center
+}
+#body{
+background-color:yellow
+}
+</style>
+
 <head>
 
 
@@ -17,9 +33,10 @@
 	
   </ul>
 </nav>
+<div id="p">
 <p style="font-family:Verdana;color:black;font-size:50px">Movie Knight</p>
 <div class="imgcontainer">
-    <center> <img src="logo.png" alt="Avatar" class="avatar"> </center>
+    {% comment %}<center> <img src="{% static "/logo.jpg" %}" alt="Avatar" class="avatar"> </center>{% endcomment %}
   </div>
 
   <center>
@@ -28,22 +45,24 @@
   <input type="text" name="Username">
   <br>
   Password:
-  <input type="text" name="Password">
+  <input type="password" name="Password">
   <br>
-  <input type="submit" value="Submit">
+  <a href="/" class="btn" type="submit" value="Submit">Submit</a>
 </form>
 <p>Don't have an account?</p>
-<p>Click <a href="create.html">here</a> to create a new account</p>
+<p>Click <a href="/new-user">here</a> to create a new account</p>
 </center>
-
-<footer class="w3-container w3-black">
+</div>
+</body>
+</div>
+<div id="footer">
+    <footer class="w3-container w3-black">
   
   <p>For Philly Codefest 2017</p>
-</footer>
-</body>
-
+    </footer>
+</div>
 <!--       _
        .__(.)< (MEOW)
         \___)   
  ~~~~~~~~~~~~~~~~~~-->
-</html>
+{% endblock %}

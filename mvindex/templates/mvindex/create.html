@@ -1,5 +1,21 @@
 {% load staticfiles %}
 {% block content %}
+<style>
+#footer {
+   position:absolute;
+   bottom:0;
+   width:100%;
+   height:60px;   /* Height of the footer */
+   background:#6cf;
+}
+#p{
+text-align: center
+}
+#body{
+background-color:yellow
+}
+</style>
+
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="movie.css">
@@ -15,10 +31,10 @@
     <li><p><a href="about.html">About</a></p></li>
   </ul>
 </nav>
-
+<div id="p">
 <p style="font-family:Verdana;color:black;font-size:50px">Create an account</p>
 <div class="imgcontainer">
-    <center> <img src="/images/logo.png" alt="Avatar" class="avatar"> </center>
+    {% comment %}<center> <img src="{% static "/logo.jpg" %}" alt="Avatar" class="avatar"> </center>{% endcomment %}
   </div>
 
   <center>
@@ -27,15 +43,20 @@
   <input type="text" name="Username">
   <br>
   Create your password:
-  <input type="text" name="Password">
+  <input type="password" name="Password">
   <br>
-  <input type="submit" value="Submit">
+  <button href="/create/" class="btn" type="submit" value="Submit"/>
+</form>
+  </center>
+</div>
 </form>
 </center>
 
-<footer class="w3-container w3-black">
-  <p>For Philly Codefest 2017</p>
-</footer>
+<div id="footer">
+    <footer class="w3-container w3-black">
+        <p>For Philly Codefest 2017</p>
+    </footer>
+</div>
 </body>
 
 <!--       _
