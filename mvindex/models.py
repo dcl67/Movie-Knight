@@ -43,18 +43,30 @@ class Question(models.Model):
     def __unicode__(self):
         return u'%s'%self.question
 """
+class movie_titles(models.Model):
+    movie1 = models.CharField(max_length=100, blank=True, null=True)
+    movie2 = models.CharField(max_length=100, blank=True, null=True)
+    movie3 = models.CharField(max_length=100, blank=True, null=True)
+    movie4 = models.CharField(max_length=100, blank=True, null=True)
+    movie5 = models.CharField(max_length=100, blank=True, null=True)
+    movie6 = models.CharField(max_length=100, blank=True, null=True)
+    movie7 = models.CharField(max_length=100, blank=True, null=True)
+    movie8 = models.CharField(max_length=100, blank=True, null=True)
+    movie9 = models.CharField(max_length=100, blank=True, null=True)
+    movie10 = models.CharField(max_length=100, blank=True, null=True)
 
-class QuizResults(models.Model):
-    action = models.IntegerField(blank=False, null=False)
-    horror = models.IntegerField(blank=False, null=False)
-    fantasy = models.IntegerField(blank=True, null=True)
-    animated = models.IntegerField(blank=True, null=True)
-    thriller = models.IntegerField(blank=True, null=True)
-    comedy = models.IntegerField(blank=True, null=True)
-    adventure = models.IntegerField(blank=True, null=True)
-    romance = models.IntegerField(blank=True, null=True)
-    war = models.IntegerField(blank=True, null=True)
-    history = models.IntegerField(blank=True, null=True)
+class Questionaire(models.Model):
+    question1 = models.CharField(max_length=500, blank=True, null=True)
+    question2 = models.CharField(max_length=500, blank=True, null=True)
+    question3 = models.CharField(max_length=500, blank=True, null=True)
+    question4 = models.CharField(max_length=500, blank=True, null=True)
+    question5 = models.CharField(max_length=500, blank=True, null=True)
+    question6 = models.CharField(max_length=500, blank=True, null=True)
+    question7 = models.CharField(max_length=500, blank=True, null=True)
+    question8 = models.CharField(max_length=500, blank=True, null=True)
+    question9 = models.CharField(max_length=500, blank=True, null=True)
+    question10 = models.CharField(max_length=500, blank=True, null=True)
+
 
 class NewUser(models.Model):
     username = models.CharField(max_length=100, blank=True, null=True)
