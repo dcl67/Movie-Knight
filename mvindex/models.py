@@ -10,11 +10,7 @@ class Rating(models.Model):
 class Movie(models.Model):
     imdbid = models.CharField(max_length=100, blank=True, null=True)
     title = models.CharField(max_length=100, blank=True, null=True)
-    year = models.CharField(max_length=100, blank=True, null=True)
-    rating = models.CharField(max_length=5, blank=True, null=True)
-    runtime = models.CharField(max_length=100, blank=True, null=True)
-    genre = models.CharField(max_length=50, blank=True, null=True)
-    actors = models.CharField(max_length=500, blank=True, null=True)
+    #year = models.CharField(max_length=100, blank=True, null=True)
 
     def __str__(self):
         return self.title
@@ -56,16 +52,16 @@ class movie_titles(models.Model):
     movie10 = models.CharField(max_length=100, blank=True, null=True)
 
 class Questionaire(models.Model):
-    question1 = models.CharField(max_length=500, blank=True, null=True)
-    question2 = models.CharField(max_length=500, blank=True, null=True)
-    question3 = models.CharField(max_length=500, blank=True, null=True)
-    question4 = models.CharField(max_length=500, blank=True, null=True)
-    question5 = models.CharField(max_length=500, blank=True, null=True)
-    question6 = models.CharField(max_length=500, blank=True, null=True)
-    question7 = models.CharField(max_length=500, blank=True, null=True)
-    question8 = models.CharField(max_length=500, blank=True, null=True)
-    question9 = models.CharField(max_length=500, blank=True, null=True)
-    question10 = models.CharField(max_length=500, blank=True, null=True)
+    question1 = models.IntegerField(blank=True, null=True)
+    question2 = models.IntegerField(blank=True, null=True)
+    question3 = models.IntegerField(blank=True, null=True)
+    question4 = models.IntegerField(blank=True, null=True)
+    question5 = models.IntegerField(blank=True, null=True)
+    question6 = models.IntegerField(blank=True, null=True)
+    question7 = models.IntegerField(blank=True, null=True)
+    question8 = models.IntegerField(blank=True, null=True)
+    question9 = models.IntegerField(blank=True, null=True)
+    question10 = models.IntegerField(blank=True, null=True)
 
 
 class NewUser(models.Model):

@@ -36,44 +36,35 @@ background-color:yellow
 <div id="p">
 <p style="font-family:Verdana;color:black;font-size:50px">Movie Knight</p>
 
-
+<a href="quiz/" class="btn" type="submit" value="Submit">Submit</a>
 <table id="MovieTable" class="display">
     <thead>
         <tr class="noExl">
-            <th>Movie name</th>
-            <th>Year</th>
-            <th>Rating</th>
-            <th>Runtime</th>
-            <th>Genre</th>
-            <th>Actors</th>
+            <th>ID</th>
+            <th>Title</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
         {% for m in movie %}
             <tr>
                 <td>
+                    {{ m.imdbid }}
+                </td>
+                <td>
                     {{ m.title }}
                 </td>
                 <td>
-                    {{ m.year }}
-                </td>
-                <td>
-                    {{ m.rating }}
-                </td>
-                <td>
-                    {{ m.runtime }}
-                </td>
-                <td>
-                    {{ m.genre }}
-                </td>
-                <td>
-                    {{ m.actors }}
+                    <input type="checkbox", value="m.imdbid">
                 </td>
             </tr>
         {% endfor %}
     </tbody>
 </table>
 
+</div>
+</body>
+</div>
 
 {% endblock %}
 {% block js %}
@@ -86,14 +77,5 @@ $(document).ready(function(){
 
 </script>
 
-</div>
-</body>
-</div>
-<div id="footer">
-    <footer class="w3-container w3-black">
-  
-  <p>For Philly Codefest 2017</p>
-    </footer>
-</div>
 
 {% endblock %}

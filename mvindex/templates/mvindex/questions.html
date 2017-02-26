@@ -1,5 +1,6 @@
-<!DOCTYPE html>
-<html>
+{% load staticfiles %}
+{% block content %}
+
 <head>
 
 
@@ -31,10 +32,10 @@
 <td width="75"><b>4</b></td>
 <td width="75"><b>5</b></td>
 </tr>
-{% for t in title %}
+{% for titles in titles%}
 <tr align="CENTER">
 <td align="LEFT">
-  {{ t.movie1 }}</td>
+  {{ titles.movie1 }}</td>
 <td><input type="RADIO" name="#1" value="1"></td>
 <td><input type="RADIO" name="#1" value="2"></td>
 <td><input type="RADIO" name="#1" value="3"></td>
@@ -43,7 +44,7 @@
 </tr>
 <tr align="CENTER">
 <td align="LEFT">
-  {{ t.movie2 }}</td>
+  {{ titles.movie2 }}</td>
 <td><input type="RADIO" name="#2" value="1"></td>
 <td><input type="RADIO" name="#2" value="2"></td>
 <td><input type="RADIO" name="#2" value="3"></td>
@@ -52,7 +53,7 @@
 </tr>
 <tr align="CENTER">
 <td align="LEFT">
-  {{ t.movie3 }}</td>
+  {{ titles.movie3 }}</td>
 <td><input type="RADIO" name="#3" value="1"></td>
 <td><input type="RADIO" name="#3" value="2"></td>
 <td><input type="RADIO" name="#3" value="3"></td>
@@ -61,7 +62,7 @@
 </tr>
 <tr align="CENTER">
 <td align="LEFT">
-  {{ t.movie4 }}</td>
+  {{ titles.movie4 }}</td>
 <td><input type="RADIO" name="#4" value="1"></td>
 <td><input type="RADIO" name="#4" value="2"></td>
 <td><input type="RADIO" name="#4" value="3"></td>
@@ -70,7 +71,7 @@
 </tr>
 <tr align="CENTER">
 <td align="LEFT">
-  {{ t.movie5 }}</td>
+  {{ titles.movie5 }}</td>
 <td><input type="RADIO" name="#5" value="1"></td>
 <td><input type="RADIO" name="#5" value="2"></td>
 <td><input type="RADIO" name="#5" value="3"></td>
@@ -79,7 +80,7 @@
 </tr>
 <tr align="CENTER">
 <td align="LEFT">
-  {{ t.movie6 }}</td>
+  {{ titles.movie6 }}</td>
 <td><input type="RADIO" name="#6" value="1"></td>
 <td><input type="RADIO" name="#6" value="2"></td>
 <td><input type="RADIO" name="#6" value="3"></td>
@@ -88,7 +89,7 @@
 </tr>
 <tr align="CENTER">
 <td align="LEFT">
-  {{ t.movie7 }}}</td>
+  {{ titles.movie7 }}</td>
 <td><input type="RADIO" name="#7" value="1"></td>
 <td><input type="RADIO" name="#7" value="2"></td>
 <td><input type="RADIO" name="#7" value="3"></td>
@@ -97,7 +98,7 @@
 </tr>
 <tr align="CENTER">
 <td align="LEFT">
-  {{ t.movie8 }}</td>
+  {{ titles.movie8 }}</td>
 <td><input type="RADIO" name="#8" value="1"></td>
 <td><input type="RADIO" name="#8" value="2"></td>
 <td><input type="RADIO" name="#8" value="3"></td>
@@ -106,7 +107,7 @@
 </tr>
 <tr align="CENTER">
 <td align="LEFT">
-  {{ t.movie9 }}</td>
+  {{ titles.movie9 }}</td>
 <td><input type="RADIO" name="#9" value="1"></td>
 <td><input type="RADIO" name="#9" value="2"></td>
 <td><input type="RADIO" name="#9" value="3"></td>
@@ -115,14 +116,14 @@
 </tr>
 <tr align="CENTER">
 <td align="LEFT">
-  {{ t.movie10 }}</td>
+  {{ titles.movie10 }}</td>
 <td><input type="RADIO" name="#10" value="1"></td>
 <td><input type="RADIO" name="#10" value="2"></td>
 <td><input type="RADIO" name="#10" value="3"></td>
 <td><input type="RADIO" name="#10" value="4"></td>
 <td><input type="RADIO" name="#10" value="5"></td>
 </tr>
-
+{% endfor %}
 
 </tbody>
 </table>
@@ -143,4 +144,18 @@
        .__(.)< (MEOW)
         \___)   
  ~~~~~~~~~~~~~~~~~~-->
-</html>
+
+{% endblock %}
+{% comment %}{% block js %}
+
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+    $.ajax({
+        method: 'POST',
+        url: '/predictor',
+        data: {'yourJavaScriptArrayKey': yourJavaScriptArray}
+
+{% endblock %} {% endcomment %}
